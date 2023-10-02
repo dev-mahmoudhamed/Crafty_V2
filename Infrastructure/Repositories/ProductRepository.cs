@@ -18,9 +18,9 @@ namespace Infrastructure.Repositories
                 .Include(p => p.ProductBrand)
                 .Include(p => p.ProductType)
                 .SingleOrDefaultAsync(p => p.Id == id);
+
             return product;
         }
-
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
             return await _context.Products
